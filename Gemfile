@@ -11,10 +11,8 @@ gem 'devise-i18n'
 gem 'foreman'
 # Rails gem of the Bootstrap based admin theme SB Admin 2.
 gem 'bootstrap_sb_admin_base_v2'
-# the font-awesome font bundled as an asset for the rails asset pipeline
-gem 'font-awesome-rails'
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 ######
 
 
