@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :backoffice do
+  get 'dashboard/index'
+  end
+
+  namespace :site do
+  get 'home/index'
+  end
+
+  root 'site/home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
