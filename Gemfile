@@ -1,7 +1,20 @@
 source 'https://rubygems.org'
 
 ###### Manually Added
-
+# Flexible authentication solution for Rails with Warden.
+gem 'devise'
+# Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
+gem 'rails-i18n'
+# Translations for the devise gem
+gem 'devise-i18n'
+# Manage Procfile-based applications
+gem 'foreman'
+# Rails gem of the Bootstrap based admin theme SB Admin 2.
+gem 'bootstrap_sb_admin_base_v2'
+# the font-awesome font bundled as an asset for the rails asset pipeline
+gem 'font-awesome-rails'
+# The most popular front-end framework for developing responsive, mobile first projects on the web.
+gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 ######
 
 
@@ -42,6 +55,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'better_errors'
+  gem 'rails-erd'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
