@@ -13,6 +13,7 @@ gem 'foreman'
 gem 'bootstrap_sb_admin_base_v2'
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
 gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
+gem 'font-awesome-rails'
 ######
 
 
@@ -53,6 +54,7 @@ group :development, :test do
 end
 
 group :development do
+gem 'rubocop'
   gem 'better_errors'
   gem 'rails-erd'
   # Access an IRB console on exception pages or by using <%= console %> in views

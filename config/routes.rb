@@ -1,12 +1,17 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
+
+  get 'backoffice', to: 'backoffice/dashboard#index'
+
   namespace :backoffice do
-  get 'dashboard/index'
+    get 'dashboard/index'
   end
 
   namespace :site do
-  get 'home/index'
+    get 'home/index'
   end
 
   root 'site/home#index'
