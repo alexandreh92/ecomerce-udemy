@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  namespace :backoffice do
+    resources :categories
+  end
+
   devise_for :admins
   devise_for :users
 

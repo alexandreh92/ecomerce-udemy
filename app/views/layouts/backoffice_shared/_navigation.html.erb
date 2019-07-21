@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
-      <span class="navbar-brand"> <%= current_admin.email %> </span> 
+      <span class="navbar-brand"> <%= current_admin.email %> </span>
     </div>
     <!-- /.navbar-header -->
     <ul class="nav navbar-top-links navbar-right">
@@ -244,6 +244,11 @@
           </li>
           <li>
             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+          </li>
+          <li>
+            <%= link_to backoffice_categories_path do %>
+            <i class="fa fa-dashboard fa-fw"></i> Categorias
+            <% end %>
           </li>
           <li>
             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>

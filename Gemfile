@@ -14,6 +14,11 @@ gem 'bootstrap_sb_admin_base_v2'
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
 gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 gem 'font-awesome-rails'
+# Jquery datatables assets pipeline :: sprockets
+gem 'jquery-datatables'
+gem 'ajax-datatables-rails'
+# Decorators/View-Models for Rails Applications 
+gem 'draper'
 ######
 
 
