@@ -27,7 +27,7 @@ class CategoryDatatable < AjaxDatatablesRails::ActiveRecord
       {
         description: record.description,
         edit: link_to("<i class='fa fa-edit'></i>".html_safe, edit_backoffice_category_path(record)),
-        delete: link_to("<i class='fa fa-trash'></i>".html_safe, backoffice_category_path(record), method: :destroy)
+        delete: link_to("<i class='fa fa-trash'></i>".html_safe, backoffice_category_path(record), method: :delete, data: { confirm: 'Are you sure?' })
         # example:
         # id: record.id,
         # name: record.name

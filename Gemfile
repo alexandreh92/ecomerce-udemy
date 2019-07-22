@@ -17,8 +17,6 @@ gem 'font-awesome-rails'
 # Jquery datatables assets pipeline :: sprockets
 gem 'jquery-datatables'
 gem 'ajax-datatables-rails'
-# Decorators/View-Models for Rails Applications 
-gem 'draper'
 ######
 
 

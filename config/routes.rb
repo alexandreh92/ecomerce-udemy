@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :addresses
   namespace :backoffice do
-    resources :categories
+    resources :categories, except: %i[show]
   end
 
   devise_for :admins
