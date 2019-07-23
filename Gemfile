@@ -17,6 +17,8 @@ gem 'font-awesome-rails'
 # Jquery datatables assets pipeline :: sprockets
 gem 'jquery-datatables'
 gem 'ajax-datatables-rails'
+# A simple, versatile notification library
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 ######
 
 

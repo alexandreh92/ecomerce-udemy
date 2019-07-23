@@ -5,12 +5,12 @@
 <!-- /.row -->
 <div class="panel panel-default">
   <div class="panel-heading">
-    Lista de Categorias
-    <%= link_to  "+ New", new_backoffice_category_path, class:"btn btn-default pull-right", style: "margin-top: -7px" %>
+    Lista de Administradores
+    <%= link_to  "+ New", new_backoffice_admin_path, class:"btn btn-default pull-right", style: "margin-top: -7px" %>
   </div>
   <!-- /.panel-heading -->
   <div class="panel-body">
-    <table id="categories-datatable" data-source="<%= backoffice_categories_path(format: :json) %>"
+    <table id="admins-datatable" data-source="<%= backoffice_admins_path(format: :json) %>"
       class="table table-striped table-bordered dataTable" style="width: 100%">
       <thead>
         <tr>

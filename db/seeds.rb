@@ -8,19 +8,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-### CREATING ADMINS
-# puts '', 'Creating Administrators...', ''
-# admins = [{ email: 'admin@admin.com',
-#             password: '123123',
-#             password_confirmation: '123123' }]
+### CREATING ADMIN
 
-# admins.each do |admin|
-#   Admin.create!(email: admin.values[0],
-#                 password: admin.values[1], password_confirmation: admin.values[2]) do |_w|
-#     puts 'Creating admin ' + admin.values[0] + '...'
-#   end
-# end
-# puts '', 'Administrators created.', ''
+admin = { email: 'admin@admin.com',
+          password: '123123',
+          password_confirmation: '123123' }
+
+puts "Creating administrator #{admin.slice(:email).values}" if (Admin.create(admin) unless Admin.exists?(admin.slice(:email)))
+
 ###
 
 ### CREATING CATEGORIES

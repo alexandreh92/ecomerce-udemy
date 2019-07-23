@@ -4,18 +4,33 @@
 <head>
 
   <title>EcomerceUdemy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag    'backoffice/backoffice', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-eval' => false %>
+  <%= stylesheet_link_tag    'backoffice/backoffice' %>
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'backoffice/backoffice', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'backoffice/backoffice'  %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 </head>
-
 <body>
-<%= render partial: "layouts/backoffice_shared/navigation" %>
-<%= yield %>
+  <%= render partial: "layouts/backoffice_shared/navigation" %>
+  <!-- Page Content -->
+  <div id="page-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <%= yield %>
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!-- /#page-wrapper -->
+      
+      <% if notice %>
+      <script>
+        $.notify("<%= notice  %>", { position:"top center", className: "success" })
+      </script>
+      <% end %>
 </body>
 
 </html>

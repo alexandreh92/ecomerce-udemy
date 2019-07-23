@@ -57,7 +57,7 @@ class Backoffice::CategoriesController < BackofficeController
 
   def params_category
     params.require(:category).permit(:description)
-      end
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_category

@@ -16,6 +16,7 @@ class CategoryDatatable < AjaxDatatablesRails::ActiveRecord
     # Declare strings in this format: ModelName.column_name
     # or in aliased_join_table.column_name format
     @view_columns ||= {
+      id: { source: 'Category.id' },
       description: { source: 'Category.description', cond: :like, searchable: true, orderable: true },
       edit: {},
       delete: {}
@@ -25,6 +26,7 @@ class CategoryDatatable < AjaxDatatablesRails::ActiveRecord
   def data
     records.map do |record|
       {
+        id: "##{record.id}",
         description: record.description,
         edit: link_to("<i class='fa fa-edit'></i>".html_safe, edit_backoffice_category_path(record)),
         delete: link_to("<i class='fa fa-trash'></i>".html_safe, backoffice_category_path(record), method: :delete, data: { confirm: 'Are you sure?' })
