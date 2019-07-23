@@ -1,6 +1,9 @@
 //= require bootstrap_sb_admin_base_v2
 //= require datatables
 //= require notifyjs
+//= require backoffice/bootbox
+
+
 
 jQuery(document).on('turbolinks:load',function () {
   $('.data-toggle').collapse();

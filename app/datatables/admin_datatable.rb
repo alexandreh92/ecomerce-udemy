@@ -6,6 +6,7 @@ class AdminDatatable < AjaxDatatablesRails::ActiveRecord
   def_delegators :@view, :edit_backoffice_admin_path
   def_delegators :@view, :link_to
   def_delegators :@view, :backoffice_admin_path
+  def_delegators :@view, :current_admin
 
   def initialize(params, opts = {})
     @view = opts[:view_context]
@@ -30,9 +31,9 @@ class AdminDatatable < AjaxDatatablesRails::ActiveRecord
       {
         id: "##{record.id}",
         email: record.email,
-        # edit: ('teste' if record.id == current_admin),
         edit: link_to("<i class='fa fa-edit'></i>".html_safe, edit_backoffice_admin_path(record)),
-        delete: link_to("<i class='fa fa-trash'></i>".html_safe, backoffice_admin_path(record), method: :delete, data: { confirm: 'Are you sure?' })
+        #delete: 
+        delete: ("" if current_admin.id == record.id) || (link_to("<i class='fa fa-trash'></i>".html_safe, backoffice_admin_path(record), method: :delete, data: { confirm: 'Are you sure?' }) if current_admin.id != record.id)
         # example:
         # id: record.id,
         # name: record.name
