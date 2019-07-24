@@ -47,13 +47,15 @@ jQuery(document).ready(function() {
     "pagingType": "full_numbers",
     "columns": [
       {"data": "id"},
+      {"data": "name"},
       {"data": "email"},
+      {"data": "role"},
       {"data": "edit"},
       {"data": "delete"}
     ],
     "columnDefs": [
       {
-          "targets": [0,2,3],
+          "targets": [0,4,5],
           "className": "text-center",
           "width": "1%",
           "orderable": false

@@ -10,9 +10,11 @@
 
 ### CREATING ADMIN
 
-admin = { email: 'admin@admin.com',
+admin = { name: 'Administrador',
+          email: 'admin@admin.com',
           password: '123123',
-          password_confirmation: '123123' }
+          password_confirmation: '123123',
+          role: 0 }
 
 puts "Creating administrator #{admin.slice(:email).values}" if (Admin.create(admin) unless Admin.exists?(admin.slice(:email)))
 
