@@ -4,9 +4,8 @@
 <head>
 
   <title>EcomerceUdemy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-eval' => false %>
+  <%= stylesheet_link_tag    'application' %>
   <%= stylesheet_link_tag    'backoffice/backoffice' %>
-  <%= stylesheet_link_tag    'backoffice/bootbox' %>
 
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'backoffice/backoffice'  %>
@@ -27,11 +26,31 @@
       </div>
       <!-- /#page-wrapper -->
       
-      <% if notice %>
-      <script>
-        $.notify("<%= notice  %>", { position:"top center", className: "success" })
-      </script>
-      <% end %>
+      <div id="bb-growl" class="bb-alert alert alert-info" style="display: none">
+          <span>Default alert</span>
+      </div>
+      <div id="bb-growl-1" class="bb-alert alert alert-danger" style="display: none">
+          <span>Default alert</span>
+      </div>
+  
 </body>
+<% if notice %>
+<script>
+    notify.init({
+      "selector": "#bb-growl"
+    });
+  
+    notify.show( '<%= notice %>' )
+</script>
+<% end %>
 
+<% if alert %>
+<script>
+    notify.init({
+      "selector": "#bb-growl-1"
+    });
+  
+    notify.show( '<%= alert %>' )
+</script>
+<% end %>
 </html>

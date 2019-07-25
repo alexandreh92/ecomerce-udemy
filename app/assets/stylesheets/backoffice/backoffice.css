@@ -2,4 +2,33 @@
  *= require font-awesome
  *= require bootstrap_sb_admin_base_v2
  *= require datatables
+ *= require backoffice/modals
  */
+ #bb-growl {
+  position: fixed;
+  bottom: 25%;
+  right: 0;
+  margin-bottom: 0;
+  font-size: 1.2em;
+  padding: 1em 1.3em;
+  z-index: 2000;
+} 
+#bb-growl-1 {
+  position: fixed;
+  bottom: 25%;
+  right: 0;
+  margin-bottom: 0;
+  font-size: 1.2em;
+  padding: 1em 1.3em;
+  z-index: 2000;
+}
+.alert-info {
+  color: #4c3973;
+  background-color: #e9e2f8;
+  border-color: #e0d6f6;
+}
+.alert {
+  border-width: 0;
+  border-left-width: 4px;
+  border-radius: 0;
+}

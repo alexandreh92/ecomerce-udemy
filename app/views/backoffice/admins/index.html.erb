@@ -6,7 +6,9 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     Lista de Administradores
+    <% if policy(@admins).new? %>
     <%= link_to  "+ New", new_backoffice_admin_path, class:"btn btn-default pull-right", style: "margin-top: -7px" %>
+    <% end %>
   </div>
   <!-- /.panel-heading -->
   <div class="panel-body">

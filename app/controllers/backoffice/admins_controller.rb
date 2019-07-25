@@ -2,9 +2,12 @@
 
 class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only: %i[show edit update destroy]
+  after_action :verify_authorized, only: [:new]
+  after_action :verify_policy_scoped, only: [:index]
 
   def index
-    @admins = Admin.all
+    # @admins = Admin.all
+    @admins = policy_scope(Admin)
     respond_to do |format|
       format.html
       format.json { render json: AdminDatatable.new(params, view_context: view_context) }
@@ -15,6 +18,7 @@ class Backoffice::AdminsController < BackofficeController
 
   def new
     @admin = Admin.new
+    authorize @admin
   end
 
   def create
@@ -53,7 +57,7 @@ class Backoffice::AdminsController < BackofficeController
     set_admin
   end
 
-  def destroy
+  def destroyexcept
     @admin.destroy
     respond_to do |format|
       format.html { redirect_to backoffice_admins_path, notice: 'Admin was successfully destroyed.' }
@@ -64,7 +68,7 @@ class Backoffice::AdminsController < BackofficeController
   private
 
   def params_admin
-    params.require(:admin).permit(:name, :email, :password, :password_confirmation)
+    params.require(:admin).permit(policy(@admin).permitted_attributes)
   end
 
   # Use callbacks to share common setup or constraints between actions.

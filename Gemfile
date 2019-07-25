@@ -19,6 +19,10 @@ gem 'jquery-datatables'
 gem 'ajax-datatables-rails'
 # A simple, versatile notification library
 gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+# Minimal authorization through OO design and pure Ruby classes
+gem "pundit"
+#
+gem 'rails-assets-bootbox', source: 'https://rails-assets.org'
 ######
 
 

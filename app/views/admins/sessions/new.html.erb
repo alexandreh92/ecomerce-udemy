@@ -32,5 +32,16 @@
     </div>
   </div>
 </div>
-
+<div id="bb-growl-1" class="bb-alert alert alert-danger" style="display: none">
+    <span>Default alert</span>
+</div>
+<% flash.each do |key, value| %>
+<script>
+    notify.init({
+      "selector": "#bb-growl-1"
+    });
+  
+    notify.show( '<%= value %>' )
+</script>
+<% end %>
 

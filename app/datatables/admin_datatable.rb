@@ -7,6 +7,8 @@ class AdminDatatable < AjaxDatatablesRails::ActiveRecord
   def_delegators :@view, :link_to
   def_delegators :@view, :backoffice_admin_path
   def_delegators :@view, :current_admin
+  def_delegators :@view, :policy_scope
+  def_delegators :@view, :with_restricted_access
 
   def initialize(params, opts = {})
     @view = opts[:view_context]
@@ -46,8 +48,6 @@ class AdminDatatable < AjaxDatatablesRails::ActiveRecord
   end
 
   def get_raw_records
-    Admin.all
-    # insert query here
-    # User.all
+    policy_scope(Admin)
   end
 end
